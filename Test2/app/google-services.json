@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "76759986056",
+    "firebase_url": "https://pronostiekappwouthostnes.firebaseio.com",
+    "project_id": "pronostiekappwouthostnes",
+    "storage_bucket": "pronostiekappwouthostnes.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:76759986056:android:c733059bcdbed0e610d43d",
+        "android_client_info": {
+          "package_name": "be.vives.pronostiekappwouthostens"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "76759986056-blmgsv3kj0tdfkh9v8imu5no8c3i8qaq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0yX2A02dm-LzzQkaWRY2sRRtHblWXOJ4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "76759986056-blmgsv3kj0tdfkh9v8imu5no8c3i8qaq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

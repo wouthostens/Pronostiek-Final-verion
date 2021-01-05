@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/navigation"
+    app:startDestination="@id/loginFragment"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="be.vives.pronostiekappwouthostens.login.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/login_fragment">
+        <action
+            android:id="@+id/action_loginFragment_to_resetUserPasswordFragment"
+            app:destination="@id/resetUserPasswordFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_registrerenFragment2"
+            app:destination="@id/registrerenFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrerenFragment"
+        android:name="be.vives.pronostiekappwouthostens.registreren.RegistrerenFragment"
+        android:label="RegistrerenFragment"
+        tools:layout="@layout/registreren_fragment">
+        <action
+            android:id="@+id/action_registrerenFragment_to_loginFragment2"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resetUserPasswordFragment"
+        android:name="be.vives.pronostiekappwouthostens.resetpwd.ResetUserPasswordFragment"
+        android:label="reset_user_password_fragment"
+        tools:layout="@layout/reset_user_password_fragment" >
+        <argument
+            android:name="user"
+            app:argType="be.vives.pronostiekappwouthostens.classes.User" />
+    </fragment>
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="be.vives.pronostiekappwouthostens.welcome.WelcomeFragment"
+        android:label="welcome_fragment"
+        tools:layout="@layout/welcome_fragment" >
+        <argument
+            android:name="user"
+            app:argType="com.google.firebase.auth.FirebaseUser" />
+        <action
+            android:id="@+id/action_welcomeFragment_to_groepAanmakenFragment"
+            app:destination="@id/groepAanmakenFragment" />
+        <action
+            android:id="@+id/action_welcomeFragment_to_groepAansluitenFragment2"
+            app:destination="@id/groepAansluitenFragment2" />
+        <action
+            android:id="@+id/action_welcomeFragment_to_groepWelcomeFragment"
+            app:destination="@id/groepWelcomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/groepAanmakenFragment"
+        android:name="be.vives.pronostiekappwouthostens.groep.aan.GroepAanFragment"
+        android:label="groep_aanmaken_fragment"
+        tools:layout="@layout/groep_aanmaken_fragment" >
+        <action
+            android:id="@+id/action_groepAanmakenFragment_to_welcomeFragment2"
+            app:destination="@id/welcomeFragment"
+            app:popUpTo="@id/welcomeFragment" />
+        <argument
+            android:name="user"
+            app:argType="com.google.firebase.auth.FirebaseUser" />
+    </fragment>
+    <fragment
+        android:id="@+id/groepAansluitenFragment2"
+        android:name="be.vives.pronostiekappwouthostens.groep.aansluiten.GroepAansluitenFragment"
+        android:label="groep_aansluiten_fragment"
+        tools:layout="@layout/groep_aansluiten_fragment" >
+        <action
+            android:id="@+id/action_groepAansluitenFragment2_to_welcomeFragment"
+            app:destination="@id/welcomeFragment"
+            app:popUpTo="@id/welcomeFragment" />
+        <argument
+            android:name="user"
+            app:argType="com.google.firebase.auth.FirebaseUser" />
+    </fragment>
+    <fragment
+        android:id="@+id/groepWelcomeFragment"
+        android:name="be.vives.pronostiekappwouthostens.groep.welcome.GroepWelcomeFragment"
+        android:label="groep_welcome_fragment"
+        tools:layout="@layout/groep_welcome_fragment" >
+        <argument
+            android:name="Groep"
+            app:argType="be.vives.pronostiekappwouthostens.classes.Groep" />
+        <action
+            android:id="@+id/action_groepWelcomeFragment_to_pronostiekAanmakenFragment"
+            app:destination="@id/pronostiekAanmakenFragment" />
+        <action
+            android:id="@+id/action_groepWelcomeFragment_to_pronostiekenOverzichtFragment"
+            app:destination="@id/pronostiekenOverzichtFragment" />
+        <action
+            android:id="@+id/action_groepWelcomeFragment_to_pronostiekResultaatOverzichtFragment"
+            app:destination="@id/pronostiekResultaatOverzichtFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pronostiekAanmakenFragment"
+        android:name="be.vives.pronostiekappwouthostens.pronstiek.a.aanmaken.PronostiekAanmakenFragment"
+        android:label="PronostiekAanmakenFragment" >
+        <argument
+            android:name="groep"
+            app:argType="be.vives.pronostiekappwouthostens.classes.Groep" />
+        <action
+            android:id="@+id/action_pronostiekAanmakenFragment_to_groepWelcomeFragment"
+            app:destination="@id/groepWelcomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pronostiekenOverzichtFragment"
+        android:name="be.vives.pronostiekappwouthostens.pronstiek.a.overzicht.PronostiekenOverzichtFragment"
+        android:label="pronostieken_overzicht_fragment"
+        tools:layout="@layout/pronostieken_overzicht_fragment" >
+        <action
+            android:id="@+id/action_pronostiekenOverzichtFragment_to_groepWelcomeFragment"
+            app:destination="@id/groepWelcomeFragment" />
+        <argument
+            android:name="groep"
+            app:argType="be.vives.pronostiekappwouthostens.classes.Groep" />
+        <action
+            android:id="@+id/action_pronostiekenOverzichtFragment_to_pronostiekInvullenFragment"
+            app:destination="@id/pronostiekInvullenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pronostiekInvullenFragment"
+        android:name="be.vives.pronostiekappwouthostens.pronstiek.a.invullen.PronostiekInvullenFragment"
+        android:label="PronostiekInvullenFragment" >
+        <argument
+            android:name="pronostiek"
+            app:argType="be.vives.pronostiekappwouthostens.classes.Pronostiek" />
+        <argument
+            android:name="groep"
+            app:argType="be.vives.pronostiekappwouthostens.classes.Groep" />
+    </fragment>
+    <fragment
+        android:id="@+id/pronostiekDetail"
+        android:name="be.vives.pronostiekappwouthostens.pronstiek.a.detail.PronostiekDetailFragment"
+        android:label="PronostiekDetail"
+        tools:layout="@layout/pronostiek_detail_fragment">
+        <argument
+            android:name="Groep"
+            app:argType="be.vives.pronostiekappwouthostens.classes.Groep" />
+        <argument
+            android:name="Pronostiek"
+            app:argType="be.vives.pronostiekappwouthostens.classes.Pronostiek" />
+    </fragment>
+    <fragment
+        android:id="@+id/pronostiekResultaatOverzichtFragment"
+        android:name="be.vives.pronostiekappwouthostens.pronstiek.a.resultaat.PronostiekResultaatOverzichtFragment"
+        android:label="pronostiek_resultaat_overzicht_fragment"
+        tools:layout="@layout/pronostiek_resultaat_overzicht_fragment" >
+        <action
+            android:id="@+id/action_pronostiekResultaatOverzichtFragment_to_pronostiekDetail"
+            app:destination="@id/pronostiekDetail" />
+        <argument
+            android:name="Groep"
+            app:argType="be.vives.pronostiekappwouthostens.classes.Groep" />
+    </fragment>
+</navigation>

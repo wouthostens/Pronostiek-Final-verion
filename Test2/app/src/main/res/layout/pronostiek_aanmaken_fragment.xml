@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="myModel"
+            type="be.vives.pronostiekappwouthostens.pronstiek.a.aanmaken.PronostiekAanmakenViewModel" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".pronstiek.a.aanmaken.PronostiekAanmakenFragment"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/pronostiekenrecyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="558dp">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="naam van pronostiek:" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonNaamPronostiek"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="@={myModel.pronsotieknaam}"/>
+
+        <TextView
+            android:id="@+id/aantalgeselecteerdematcehn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+
+        <Button
+            android:id="@+id/buttonPronostiekOpslaan"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Pronostiek Opslaan"
+            android:onClick="@{()->myModel.opslaanPronostiekFireBase()}"/>
+
+    </LinearLayout>
+</layout>

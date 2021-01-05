@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">PronostiekAppWoutHostens</string>
+    <string name="welcomeUser">Welkom %s</string>
+    <string name="match">%s - %s</string>
+</resources>

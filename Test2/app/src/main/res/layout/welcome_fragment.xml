@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="myModel"
+            type="be.vives.pronostiekappwouthostens.welcome.WelcomeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".welcome.WelcomeFragment">
+
+        <ImageView
+            android:id="@+id/ProfilePicImageview"
+            android:layout_width="47dp"
+            android:layout_height="61dp"
+            app:layout_constraintBottom_toTopOf="@+id/GroepAanmakenButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.956"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.173"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/GebruikersnaamTextview"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="@{myModel.user.displayName}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/GroepAanmakenButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{()-> myModel.navigateToGroopScreen()}"
+            android:text="Groep aanmaken"
+            app:layout_constraintBottom_toTopOf="@+id/Aansluitbuttn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/GebruikersnaamTextview"
+            app:layout_constraintVertical_bias="0.869" />
+
+        <Button
+            android:id="@+id/Aansluitbuttn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="aansluiten bij groep"
+            android:onClick="@{()->myModel.navigerenAansluitenGroep()}"
+            app:layout_constraintBottom_toBottomOf="@+id/GebruikersnaamTextview"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/GebruikersnaamTextview"
+            app:layout_constraintVertical_bias="0.373" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvGroepen"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#DBE4F1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Aansluitbuttn" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
